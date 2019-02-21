@@ -1,0 +1,55 @@
+<div class="py-10">
+  <div class="row">
+    <div class="col-md-10 mx-auto">
+      <span class="anchor" id="formLogin"></span>
+
+      <!-- form card login -->
+      <div class="card rounded-0">
+        <div class="card-header">
+          <h3 class="mb-0">Contact Us</h3>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+            <h5 *ngIf="success">Your form is valid!</h5>
+
+            <label>
+              Name:
+              <input type="text" formControlName="name" />
+              <div
+                *ngIf="submitted && messageForm.controls.name.errors"
+                class="error"
+              >
+                <div *ngIf="messageForm.controls.name.errors.required">
+                  Your name is required
+                </div>
+              </div>
+            </label>
+
+            <label>
+              Message:
+              <textarea formControlName="message"></textarea>
+              <div
+                *ngIf="submitted && messageForm.controls.message.errors"
+                class="error"
+              >
+                <div *ngIf="messageForm.controls.message.errors.required">
+                  A message is required
+                </div>
+              </div>
+            </label>
+
+            <input type="submit" value="Send message" class="cta" />
+          </form>
+
+          <div *ngIf="submitted" class="results">
+            <strong>Name:</strong>
+            <span>{{ messageForm.controls.name.value }}</span>
+
+            <strong>Message:</strong>
+            <span>{{ messageForm.controls.message.value }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

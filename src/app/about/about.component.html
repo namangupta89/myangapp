@@ -1,0 +1,60 @@
+<div class="py-10">
+  <div class="row">
+    <div class="col-md-10 mx-auto">
+      <span class="anchor" id="formLogin"></span>
+
+      <!-- form card login -->
+      <div class="card rounded-0">
+        <div class="card-header">
+          <h3 class="mb-0">About</h3>
+        </div>
+        <div class="card-body">
+          <form class="example-form">
+            <mat-form-field class="example-full-width">
+              <input
+                matInput
+                placeholder="First Name"
+                value="{{ firstName }}"
+              />
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Last Name" value="{{ lastName }}" />
+            </mat-form-field>
+
+            <mat-form-field>
+              <input
+                matInput
+                [matDatepicker]="picker"
+                placeholder="Choose a date"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <div>
+              <mat-form-field>
+                <mat-select placeholder="Sex">
+                  <mat-option *ngFor="let sex of sexs" [value]="sex.value">
+                    {{ sex.viewValue }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <mat-form-field class="example-full-width">
+              <textarea matInput placeholder="Leave a comment"></textarea>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" (click)="save()">
+              Save
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
