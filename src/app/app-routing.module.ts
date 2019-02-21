@@ -8,6 +8,9 @@ import { UsersComponent } from "./users/users.component";
 import { MaintenanceComponent } from "./maintenance/maintenance.component";
 import { RegisterComponent } from "./register/register.component";
 import { NavComponent } from './nav/nav.component';
+import { DriverComponent } from './driver/driver.component';
+import { GeofencesComponent } from './geofences/geofences.component';
+import { NotificationComponent } from './notification/notification.component';
 // import { MembersComponent } from './members/members.component';
 // import { AuthGuard } from "./auth.service";
 // import { SignupComponent } from "./signup/signup.component";
@@ -20,6 +23,9 @@ const routes: Routes = [
   { path: "", component: LoginComponent },
   { path: "userslist", component: UsersComponent },
   { path: "maintenancelist", component: MaintenanceComponent },
+  { path: "driverlist", component: DriverComponent },
+  { path: "geofenceslist", component: GeofencesComponent },
+  { path: "notificationlist", component: NotificationComponent },
   { path: "login", component: LoginComponent },
    { path: "register", component: RegisterComponent },
    {path: "logout", component : LoginComponent}

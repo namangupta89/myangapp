@@ -25,6 +25,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment} from '../environments/environment';
 import { RegisterComponent } from './register/register.component';
 import { NavloginComponent } from './navlogin/navlogin.component';
+import { DriverComponent } from './driver/driver.component';
+import { GeofencesComponent } from './geofences/geofences.component';
+import { NotificationComponent } from './notification/notification.component';
 // import { EmailComponent } from './email/email.component';
 // import { SignupComponent } from './signup/signup.component';
 // import { MembersComponent } from './members/members.component';
@@ -49,7 +52,10 @@ export const firebaseConfig = {
     UsersComponent,
     MaintenanceComponent,
     RegisterComponent,
-    NavloginComponent
+    NavloginComponent,
+    DriverComponent,
+    GeofencesComponent,
+    NotificationComponent
     // EmailComponent,
     // SignupComponent,
     // MembersComponent
