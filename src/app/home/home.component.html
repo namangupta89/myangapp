@@ -1,5 +1,5 @@
  
- <h1 >Home</h1>
+ <h1 >Vehicle Location</h1>
 
  <!-- <ul *ngIf="users">
    <li *ngFor="let user of users.data">
@@ -8,7 +8,34 @@
    </li>
  </ul> -->
 
- <div><a href="file:///Users/nnnnaman/Downloads/build/index.html" target="_blank">Vehicle Information</a></div>
+ <agm-map 
+  [latitude]="lat"
+  [longitude]="lng"
+  [zoom]="zoom"
+  [disableDefaultUI]="false"
+  [zoomControl]="false"
+  (mapClick)="mapClicked($event)">
 
- 
- <!-- <div id="shell"></div> -->
+  <agm-marker 
+      *ngFor="let m of markers; let i = index"
+      (markerClick)="clickedMarker(m.label, i)"
+      [latitude]="m.lat"
+      [longitude]="m.lng"
+      [label]="m.label"
+      [markerDraggable]="m.draggable"
+      (dragEnd)="markerDragEnd(m, $event)">
+      
+    <agm-info-window>
+      <strong>InfoWindow content</strong>
+    </agm-info-window>
+    
+  </agm-marker>
+  
+  <agm-circle [latitude]="lat + 0.3" [longitude]="lng" 
+      [radius]="5000"
+      [fillColor]="'red'"
+      [circleDraggable]="true"
+      [editable]="true">
+  </agm-circle>
+
+</agm-map>

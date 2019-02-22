@@ -72,7 +72,7 @@ export const firebaseConfig = {
     MatDatepickerModule,MatNativeDateModule,MatSelectModule,
     MatTableModule,
     AgmCoreModule.forRoot({
-      apiKey: 'YOUR_KEY'
+      apiKey: 'AIzaSyCA53-03niYZQOy-RnNJr1rOcxLkDGSXyA'
     }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule
